@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package constructorpractice;
 
 import java.text.DecimalFormat;
 
@@ -13,14 +12,14 @@ import java.text.DecimalFormat;
  */
 public class ArrayUtilities {
 
-    private double array[];
+    private static double array[];
 
     public ArrayUtilities(double array[]) {
         this.array = array;
 
     }
 
-    public double calculateTotal(double array[]) {
+    public static double calculateTotal(double array[]) {
         double accum = 0;
         for (int i = 0; i < array.length; i++) {
             accum += array[i];
@@ -29,11 +28,11 @@ public class ArrayUtilities {
         return accum;
     }
 
-    public double calculateAverage(double array[]) {
+    public static double calculateAverage(double array[]) {
         return calculateTotal(array) / array.length;
     }
 
-    public double calculateLargest(double array[]) {
+    public static double calculateLargest(double array[]) {
         double largestVal = array[0];
         for (int i = 0; i < array.length; i++) {
             if (largestVal < array[i]) {
@@ -43,7 +42,7 @@ public class ArrayUtilities {
         return largestVal;
     }
 
-    public double calculateSmallest(double array[]) {
+    public static double calculateSmallest(double array[]) {
         double smallestVal = array[0];
         for (int i = 0; i < array.length; i++) {
             if (smallestVal > array[i]) {
@@ -53,11 +52,11 @@ public class ArrayUtilities {
         return smallestVal;
     }
 
-    public double calculateRange(double array[]) {
+    public static double calculateRange(double array[]) {
         return (calculateLargest(array) - calculateSmallest(array));
     }
 
-    public void printOutput() {
+    public static void printOutput() {
         String outputString = "";
         String fmt = "%1$-10s";
         for (int i = 0; i < array.length; i++) {
