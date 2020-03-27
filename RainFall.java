@@ -60,7 +60,7 @@ public class RainFall {
     @Override
     public String toString() {
         String outputString = "";
-        String fmt = "%1$10s %2$12s%n";
+        String fmt = "%1$-15s %2$-15s%n";
         System.out.printf(fmt, "MONTH", "RAIN");
         for (int i = 0; i < rain.length; i++) {
             outputString += String.format(fmt, new DateFormatSymbols().getMonths()[i], rain[i]);
