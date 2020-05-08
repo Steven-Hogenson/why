@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package constructorpractice;
 
 import java.util.ArrayList;
 
@@ -17,13 +18,13 @@ public class Student {
     String lastName;
     String major;
     String rawGrades;
-    ArrayList<Integer> grades;
+    ArrayList<Integer> grades = new ArrayList<>();
 
     public Student() {
-        id = 0;
-        firstName = "";
-        lastName = "";
-        major = "";
+        this.id = -1;
+        this.firstName = "";
+        this.lastName = "";
+        this.major = "";
 
     }
 
@@ -31,6 +32,7 @@ public class Student {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.major = "";
     }
 
     public Student(int id, String firstName, String lastName, String major, ArrayList<Integer> grades) {
@@ -104,25 +106,30 @@ public class Student {
             return "C";
         } else if (avgScore >= 60) {
             return "D";
-        } else {
+        } else if (avgScore >= 0) {
             return "F";
+        } else {
+            return "";
         }
 
     }
 
     public String listScores() {
-        String s = "";
-        for (int x : grades) {
-            s += x + ", ";
+        if (!grades.isEmpty()) {
+            String s = "";
+            for (int x : grades) {
+                s += x + ", ";
+            }
+            return s.substring(0, s.length() - 2);//removes the last comma and space
         }
-        return s.substring(0, s.length() - 2);//removes the last comma and space
+        return "";
 
     }
 
     @Override
     public String toString() {
         String result = "";
-        result += "\nStudent ID: " + getID();
+        result += "Student ID: " + getID();
         result += "\nName: " + getFullName();
         result += "\nMajor: " + getMajor();
         result += "\nScores: " + listScores();
