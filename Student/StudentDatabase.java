@@ -29,7 +29,7 @@ public class StudentDatabase {
                 System.out.println(student + "\n");
             }
 
-            System.out.print("Do you want to save all the players in the file? [Y/N]");
+            System.out.print("Do you want to save all the students in the file? [Y/N]");
             String fileOption = sc.nextLine();
 
             if (fileOption.equalsIgnoreCase("y")) {
