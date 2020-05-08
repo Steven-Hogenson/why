@@ -17,11 +17,11 @@ public class Main {
         System.out.print("enter id: ");
         int id = sc.nextInt();
         System.out.print("enter first name: ");
-        String fName = sc.nextLine();
+        String fName = sc.next();
         System.out.print("enter last name: ");
-        String lName = sc.nextLine();
+        String lName = sc.next();
         System.out.print("enter major: ");
-        String major = sc.nextLine();
+        String major = sc.next();
         System.out.print("enter grades: ");
         String grades = sc.next();
         
