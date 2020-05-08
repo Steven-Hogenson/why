@@ -13,25 +13,20 @@ public class Main {
      */
     public static void main(String[] args) {
         ArrayList<Integer> tempGrades = new ArrayList<>();
-        Scanner sc = new Scanner(System.in);
-        System.out.print("enter id: ");
-        int id = sc.nextInt();
-        System.out.print("enter first name: ");
-        String fName = sc.next();
-        System.out.print("enter last name: ");
-        String lName = sc.next();
-        System.out.print("enter major: ");
-        String major = sc.next();
-        major += sc.nextLine();
-        System.out.print("enter grades: ");
-        String grades = sc.next();
-
+        
+        String id = JOptionPane.showInputDialog("Enter ID: ");
+        int idNum = Integer.parseInt(id);
+        String firstName = JOptionPane.showInputDialog("Enter first name: ");
+        String lastName = JOptionPane.showInputDialog("Enter last name: ");
+        String major = JOptionPane.showInputDialog("Enter major: ");
+        String grades = JOptionPane.showInputDialog("Enter grades separated by comma: ");
         String tempString = grades;
         String result[] = tempString.split(",");//splits the string of scores at each comma
         for (String s : result) {
             tempGrades.add(Integer.parseInt(s));
         }
-        Student student = new Student(id, fName, lName, major, tempGrades);
-        System.out.println(student.toString() + "\n");
+        Student student = new Student(idNum, firstName, lastName, major, tempGrades);
+        //System.out.println(student.toString() + "\n");
+        JOptionPane.showMessageDialog(null, student.toString() + "\n");
    }
 }
